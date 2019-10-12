@@ -1,16 +1,18 @@
-// myscript.js
-let img;
+let spr;
 
-function setup(){
-  // 最初に１回だけ実行される処理
-  createCanvas(480,240);
-  img = loadImage('asterisk.png');
+function setup() {
+  createCanvas(400, 400);
+  spr = createSprite( width/2, height/2, 40, 40);
+  spr.shapeColor = color(255);
+  spr.velocity.y = 0.5;
 }
 
-function draw(){
-  // そのあと繰り返し実行される処理
-  background(0);
-  rect(0,40,50,50);
-  ellipse(100,140,50,50);
-  image(img, 0, height / 2, img.width / 2, img.height / 2);
+function draw() {
+  background(50);
+  drawSprites();
+}
+
+function mousePressed() {
+  spr.position.x = mouseX;
+  spr.position.y = mouseY;
 }
