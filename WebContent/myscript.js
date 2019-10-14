@@ -1,8 +1,10 @@
 let spr;
 let balloonImage;
+let bangImage;
 
 function preload() {
     balloonImage = loadImage('asterisk.png');
+    bangImage = loadImage('bang.png');
 }
 
 function setup() {
@@ -38,4 +40,24 @@ function createBalloon(x, y) {
 
     // 風船を上に移動させるための速度を代入する
     balloon.velocity.y = random(-1.5, -1);
+    
+    balloon.onMousePressed = balloonHit;
+}
+
+//バルーンを破裂させる
+function balloonHit(balloon) {
+   
+    // 風船を消す
+    balloon.remove();
+    
+    let x = balloon.position.x;
+
+    // 破裂のスプライトを作る
+    var bang = createSprite(balloon.position.x, balloon.position.y);
+
+    // 破裂の画像を追加する
+    bang.addImage(bangImage);
+
+    // 一定時間で消す
+    bang.life = 30;
 }
