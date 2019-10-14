@@ -2,12 +2,12 @@ let spr;
 let balloonImage;
 
 function preload() {
-    balloonImage = loadImage('balloon.png');
+    balloonImage = loadImage('asterisk.png');
 }
 
 function setup() {
-  createCanvas(400, 400);
-  createBalloon(width/2,height/2);
+  createCanvas(600, 540);
+  // createBalloon(width/2,height/2);
   //spr = createSprite( width/2, height/2, 40, 40);
   //spr.velocity.y = 0.5;
   //spr.addImage(balloonImage);
@@ -15,6 +15,11 @@ function setup() {
 
 function draw() {
   background(50);
+  
+  if (random(80) < 1) {
+      createBalloon(random(30, width - 30), height + 40);
+  }
+  
   drawSprites();
 }
 
