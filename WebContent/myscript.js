@@ -4,6 +4,12 @@ let bangImage;
 let honeyCount;
 let honeyCounterImage;
 
+/*
+ * ゲームで花クリック、いくつかにコインを入れて、それが５つでコンプリート
+ * ショップでお買い物ができる
+ * お買い物したものを部屋に飾れる
+ */
+
 function preload() {
     balloonImage = loadImage('asterisk.png');
     bangImage = loadImage('bang.png');

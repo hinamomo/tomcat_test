@@ -7,7 +7,7 @@
 <title>答え</title>
 </head>
 <body>
-<h1>こたえは</h1>
+<h1>answer</h1>
     ${requestScope.num }
 </body>
 </html>

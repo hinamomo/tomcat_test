@@ -20,7 +20,7 @@
 
 <div style="text-align:center;">
         <h1>HelloWorld</h1>
-        <p>下記の値を100倍にして返します。</p>
+        <p>5はhiddenで</p>
         <form method="get" name=form1 action="/tomcat_test/hello">
             <input type="text" name="num1" value="5"> 
             <input type="submit" value="ショップへ">
