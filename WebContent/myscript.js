@@ -1,34 +1,62 @@
 let spr;
 let balloonImage;
 let bangImage;
+let honeyCount;
+let honeyCounterImage;
 
 function preload() {
     balloonImage = loadImage('asterisk.png');
     bangImage = loadImage('bang.png');
+    honeyCounterImage = loadImage('view_item.png');
 }
 
 function setup() {
   createCanvas(600, 540);
-  // createBalloon(width/2,height/2);
-  //spr = createSprite( width/2, height/2, 40, 40);
-  //spr.velocity.y = 0.5;
-  //spr.addImage(balloonImage);
+  honeyCount=0;
+  
+  //ゲームモードを初期化
+  gameMode = 'gamePlaying';
+  
+  //文字の設定
+  fill(250);
+  textFont('Paytone One');
+  textStyle(BOLD);
 }
 
 function draw() {
   background(50);
   
-  if (random(80) < 1) {
-      createBalloon(random(30, width - 30), height + 40);
+  if (gameMode == 'gameCompleted') {
+      // ハチミツを集め終わった時の処理
+      gameCompleted();
+  } else {
+	  if (random(80) < 1) {
+	      createBalloon(random(30, width - 30), height + 40);
+	  }
   }
   
   drawSprites();
-}
+  
+  //ハチミツのカウンターを表示
+  image(honeyCounterImage, width - 145, 10);
+  // カウンターの数字を表示
+  textSize(40);
+  textAlign(RIGHT);
+  text(honeyCount, width - 40, 88);
 
-function mousePressed() {
-  spr.position.x = mouseX;
-  spr.position.y = mouseY;
-}
+  // ハチミツを集め終わっていたら「COMPLETED」を表示
+  if (gameMode == 'gameCompleted') {
+    textSize(90);
+    textAlign(CENTER);
+    text('COMPLETED', width / 2, height / 2);
+  }
+  
+  // ハチミツを集め終わっていたら「COMPLETED」を表示
+  if (gameMode == 'gameCompleted') {
+    textSize(90);
+    textAlign(CENTER);
+    text('COMPLETED', width / 2, height / 2);
+  }
 
 //風船を作る
 function createBalloon(x, y) {
@@ -60,4 +88,21 @@ function balloonHit(balloon) {
 
     // 一定時間で消す
     bang.life = 30;
+    
+    // 拾ったハチミツの数を数える
+    honeyCount++;
+    
+    //ハチミツを集めたらゲーム終了
+    if (honeyCount == 5) {
+        gameMode = 'gameCompleted';
+    }
+}
+
+//ハチミツを集め終わった
+function gameCompleted() {
+    // プーさんは動かさない
+    // pooh.velocity.x = 0;
+    // pooh.velocity.y = 0;
+}
+
 }
