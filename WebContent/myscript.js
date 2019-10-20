@@ -1,40 +1,61 @@
 let spr;
 let balloonImage;
 let bangImage;
-let honeyCount;
-let honeyCounterImage;
+let coinCount;
+let coinCounterImage;
+let coinImage;
 
 /*
  * ゲームで花クリック、いくつかにコインを入れて、それが５つでコンプリート
  * ショップでお買い物ができる
  * お買い物したものを部屋に飾れる
+ * ドラッグドロップの参考
+ * https://q-az.net/elements-drag-and-drop/
+ * 部屋画像の参考
+ * https://yigao.jp/cg/game/2/
+ * 
+ * 商品
+ * ＬＥＤキャンドル　ピラー　ラスティク　ルミナラ　アイボリー
+ * https://loft.omni7.jp/detail/4901435795850
+ * 
+ * 
  */
 
 function preload() {
-    balloonImage = loadImage('asterisk.png');
+    balloonImage = loadImage('balloon.png');
     bangImage = loadImage('bang.png');
-    honeyCounterImage = loadImage('view_item.png');
+    coinCounterImage = loadImage('view_item.png');
+    backgroundImage = loadImage('sky.png');
+    coinImage = loadImage('coin.png');
 }
 
 function setup() {
   createCanvas(600, 540);
-  honeyCount=0;
+  coinCount=0;
   
   //ゲームモードを初期化
   gameMode = 'gamePlaying';
   
   //文字の設定
-  fill(250);
+  fill(30,64,255);
   textFont('Paytone One');
   textStyle(BOLD);
 }
 
 function draw() {
-  background(50);
+  //background(30,240,255);
+  background(backgroundImage);
   
-  if (gameMode == 'gameCompleted') {
-      // ハチミツを集め終わった時の処理
+//  if (gameMode == 'gameCompleted') {
+  if (coinCount >= 5) {
+	  
+	  // 重なる風船をクリックしてカウントが６になった場合の補正
+	  if(coinCount > 5){
+    	  coinCount=5;
+      }
+      // コインを集め終わった時の処理
       gameCompleted();
+      
   } else {
 	  if (random(80) < 1) {
 	      createBalloon(random(30, width - 30), height + 40);
@@ -43,23 +64,16 @@ function draw() {
   
   drawSprites();
   
-  //ハチミツのカウンターを表示
-  image(honeyCounterImage, width - 145, 10);
+  //コインのカウンターを表示
+  image(coinCounterImage, width - 120, 10);
   // カウンターの数字を表示
   textSize(40);
   textAlign(RIGHT);
-  text(honeyCount, width - 40, 88);
+  text(coinCount, width - 40, 88);
 
-  // ハチミツを集め終わっていたら「COMPLETED」を表示
+  // コインを集め終わっていたら「COMPLETED」を表示
   if (gameMode == 'gameCompleted') {
-    textSize(90);
-    textAlign(CENTER);
-    text('COMPLETED', width / 2, height / 2);
-  }
-  
-  // ハチミツを集め終わっていたら「COMPLETED」を表示
-  if (gameMode == 'gameCompleted') {
-    textSize(90);
+    textSize(85);
     textAlign(CENTER);
     text('COMPLETED', width / 2, height / 2);
   }
@@ -95,20 +109,31 @@ function balloonHit(balloon) {
     // 一定時間で消す
     bang.life = 30;
     
-    // 拾ったハチミツの数を数える
-    honeyCount++;
+    // コインをドロップする
+    if(random(10) < 5){
+    	
+    	// コインのスプライトを作る
+        var coin = createSprite(balloon.position.x, balloon.position.y);
+        // 破裂の画像を追加する
+        coin.addImage(coinImage);
+        
+        // 拾ったコインの数を数える
+        coinCount++;
+        
+       // 一定時間で消す
+        coin.life = 30;
+    	
+    }
     
-    //ハチミツを集めたらゲーム終了
-    if (honeyCount == 5) {
+    //コインを集めたらゲーム終了
+    if (coinCount == 5) {
         gameMode = 'gameCompleted';
     }
 }
 
-//ハチミツを集め終わった
+//コインを集め終わった
 function gameCompleted() {
-    // プーさんは動かさない
-    // pooh.velocity.x = 0;
-    // pooh.velocity.y = 0;
+
 }
 
 }
