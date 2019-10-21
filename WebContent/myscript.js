@@ -62,11 +62,11 @@ function draw() {
   background(backgroundImage);
   
 //  if (gameMode == 'gameCompleted') {
-  if (coinCount >= 5) {
+  if (coinCount >= 3) {
 	  
 	  // 重なる風船をクリックしてカウントが６になった場合の補正
-	  if(coinCount > 5){
-    	  coinCount=5;
+	  if(coinCount > 3){
+    	  coinCount=3;
       }
       // コインを集め終わった時の処理
       gameCompleted();
@@ -141,7 +141,7 @@ function balloonHit(balloon) {
     }
     
     //コインを集めたらゲーム終了
-    if (coinCount == 5) {
+    if (coinCount == 3) {
         gameMode = 'gameCompleted';
     }
 }
