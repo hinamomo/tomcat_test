@@ -13,7 +13,7 @@
 <body>
 <script src="home.js"></script> 
 <h1>answer</h1>
-    選んだアイテムをお部屋に飾ってみよう！
+    <h1>選んだアイテムをお部屋に飾ってみよう！</h1>
     ${requestScope.num }
     <img src="room.png" />
     <div class="drag-and-drop" id="red-box">

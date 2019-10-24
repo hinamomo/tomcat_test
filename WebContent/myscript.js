@@ -33,7 +33,9 @@ let coinImage;
  * フクロウルームシューズ　ベージュ
  * https://loft.omni7.jp/detail/4523251024848
  * 
- * 
+ * TODO
+ * shop.jspの文字コード
+ * アイテム透過、リサイズ
  */
 
 function preload() {
