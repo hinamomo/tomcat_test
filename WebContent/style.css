@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/*
+* お店
+*/
+
 ul.image_list li {
   /* liが横並びになるようにします。 */
   display: inline-block;
@@ -52,3 +56,15 @@ ul.image_list li .image_box {
   display: block;
 }
 
+/*
+* 部屋
+*/
+.drag-and-drop {
+    cursor: move;
+    position: absolute;
+    z-index: 1000;
+}
+
+.drag {
+    z-index: 1001;
+}
