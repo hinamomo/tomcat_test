@@ -16,10 +16,10 @@
 
 	<input type="hidden" value=${requestScope.num }>
 
-	<form method="get" name=form1 action="/tomcat_test/home">
-		<input type="text" id="num1" value="1"> 
-		<input type="text" id="num2" value="2"> 
-		<input type="text" id="num3" value="3"> 
+	<form method="get" action="/tomcat_test/home">
+		<input type="text" id="num1" value="item_1.png"> 
+		<input type="text" id="num2" value=""> 
+		<input type="text" id="num3" value=""> 
 	<input type="submit" value="お部屋へ">
 	</form>
 	

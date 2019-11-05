@@ -14,16 +14,25 @@
 <script src="home.js"></script> 
 <h1>answer</h1>
     <h1>選んだアイテムをお部屋に飾ってみよう！</h1>
-    ${requestScope.num }
+    ${requestScope.items[0] }
     <img src="room.png" />
     <div class="drag-and-drop" id="red-box">
-    <img src="item_1.png" />
+    <img src="item_room_1.png" />
     </div>
 <div class="drag-and-drop" id="blue-box">
-<img src="item_2.png" />
+<img src="item_room_2.png" />
 </div>
 <div class="drag-and-drop" id="yellow-box">
-<img src="item_3.png" />
+<img src="item_room_3.png" />
+</div>
+<div class="drag-and-drop" id="blue-box">
+<img src="item_room_4.png" />
+</div>
+<div class="drag-and-drop" id="blue-box">
+<img src="item_room_5.png" />
+</div>
+<div class="drag-and-drop" id="blue-box">
+<img src="item_room_6.png" />
 </div>
 
 </body>

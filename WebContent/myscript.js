@@ -13,6 +13,7 @@ let coinImage;
  * https://q-az.net/elements-drag-and-drop/
  * 部屋画像の参考
  * https://yigao.jp/cg/game/2/
+ * https://www.twipu.com/mumuyakko/tweet/1108717124611006465
  * 
  * 商品
  * ＬＥＤキャンドル　ピラー　ラスティク　ルミナラ　アイボリー

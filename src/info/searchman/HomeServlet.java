@@ -35,38 +35,47 @@ public class HomeServlet extends HttpServlet {
 		 PrintWriter out = response.getWriter();
 		 out.println("Hello Servlet");
 		
-
+		 System.out.println("GETメソッドで呼び出されました");
 		 
-		int num1;
-		int num2;
-		int num3;
+		String item1 = "";
+		String item2 = "";
+		String item3 = "";
+		String[] items = new String[3];
 		
         //リクエストデータの取得
-        if(null == request.getParameter("num1") || "".equals(request.getParameter("num1"))) {
-            num1 = 10;
-        }else {
-            num1 = Integer.parseInt(request.getParameter("num1"));
-        }
+		item1 = request.getParameter("num1");
+		item2 = request.getParameter("num2");
+		item3 = request.getParameter("num3");
+		
+		System.out.println("item1="+item1);
         
-        //リクエストデータの取得
-        if(null == request.getParameter("num2") || "".equals(request.getParameter("num2"))) {
-            num2 = 10;
-        }else {
-            num2 = Integer.parseInt(request.getParameter("num2"));
-        }
+        items[0] = (item1 == "item_1.png")? "item_room_1.png" : 
+        	       (item1 == "item_2.png")? "item_room_2.png" :
+        	       (item1 == "item_3.png")? "item_room_3.png" :
+      	    	   (item1 == "item_4.png")? "item_room_4.png" :
+      	    	   (item1 == "item_5.png")? "item_room_5.png" :
+      	    	   "item_6.png";
         
-        //リクエストデータの取得
-        if(null == request.getParameter("num3") || "".equals(request.getParameter("num3"))) {
-            num1 = 10;
-        }else {
-            num1 = Integer.parseInt(request.getParameter("num3"));
-        }
+        items[1] = (item2 == "item_1.png")? "item_room_1.png" : 
+ 	               (item2 == "item_2.png")? "item_room_2.png" :
+ 	               (item2 == "item_3.png")? "item_room_3.png" :
+	    	       (item2 == "item_4.png")? "item_room_4.png" :
+	    	       (item2 == "item_5.png")? "item_room_5.png" :
+	    	       "item_6.png";
         
-        //100倍にする。
-        // num1 = num1 * 100;
+        items[2] = (item3 == "item_1.png")? "item_room_1.png" : 
+                   (item3 == "item_2.png")? "item_room_2.png" :
+                   (item3 == "item_3.png")? "item_room_3.png" :
+ 	               (item3 == "item_4.png")? "item_room_4.png" :
+ 	               (item3 == "item_5.png")? "item_room_5.png" :
+ 	               "item_6.png";
+        
+        out.println(items[0]);
+        
+        
 
         //リクエストオブジェクトへの設定
-        request.setAttribute("num", num1);
+        request.setAttribute("items", items);
 
 		
 		//JSPへのフォワード処理

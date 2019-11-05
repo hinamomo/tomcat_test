@@ -38,7 +38,9 @@ public class HelloServlet extends HttpServlet {
 		int num1;
         //リクエストデータの取得
         if(null == request.getParameter("num1") || "".equals(request.getParameter("num1"))) {
+        	
             num1 = 10;
+            System.out.println("null="+num1);
         }else {
             num1 = Integer.parseInt(request.getParameter("num1"));
         }
