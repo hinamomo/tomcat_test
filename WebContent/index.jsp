@@ -12,11 +12,8 @@
 
 </head>
 
-<body>
-  
-<script src="myscript.js"></script>  
-<!-- <h1>Hello Dynamic Web</h1> -->
-<a href="hello">hello</a> 
+<body>  
+<script src="myscript.js"></script> 
 
 <div style="text-align:center;">
         <h1>HelloWorld</h1>

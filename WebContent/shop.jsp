@@ -3,9 +3,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="style.css">
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+ <meta charset="utf-8" />
 <title>お店</title>
 </head>
 <body>
@@ -15,11 +16,11 @@
 	<h2>お部屋に置きたいグッズを３つ選ぼう！</h2>
 
 	<input type="hidden" value=${requestScope.num }>
-
-	<form method="get" action="/tomcat_test/home">
-		<input type="text" id="num1" value="item_1.png"> 
-		<input type="text" id="num2" value=""> 
-		<input type="text" id="num3" value=""> 
+	
+	<form method="get" name=form1 action="/tomcat_test/home">
+		<input type="hidden" name="num1" id="num1" value="item_1.png"> 
+		<input type="hidden" name="num2" id="num2" value=""> 
+		<input type="hidden" name="num3" id="num3" value=""> 
 	<input type="submit" value="お部屋へ">
 	</form>
 	
@@ -62,36 +63,7 @@
           </div>
         </li>
         
-        
       </ul>
     </div>
-
-
-	<!-- <div id="area1" class="item_type1">
-		<img src="item_1.png">
-	</div>
-
-	<div id="area2" class="not-selected">
-		<img src="item_2.png">
-	</div>
-
-	<div id="area3" class="not-selected">
-		<img src="item_3.png">
-	</div>
-
-	<div id="area4" class="not-selected">
-		<img src="item_4.png">
-	</div>
-
-	<div id="area5" class="not-selected">
-		<img src="item_5.png">
-	</div>
-
-	<div id="area6" class="not-selected">
-		<img src="item_6.png">
-	</div> -->
-
-
-
 </body>
 </html>

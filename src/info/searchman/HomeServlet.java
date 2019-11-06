@@ -48,32 +48,17 @@ public class HomeServlet extends HttpServlet {
 		item3 = request.getParameter("num3");
 		
 		System.out.println("item1="+item1);
+		System.out.println("item2="+item2);
+		System.out.println("item3="+item3);
         
-        items[0] = (item1 == "item_1.png")? "item_room_1.png" : 
-        	       (item1 == "item_2.png")? "item_room_2.png" :
-        	       (item1 == "item_3.png")? "item_room_3.png" :
-      	    	   (item1 == "item_4.png")? "item_room_4.png" :
-      	    	   (item1 == "item_5.png")? "item_room_5.png" :
-      	    	   "item_6.png";
+        items[0] = itemJudge(item1);
+        items[1] = itemJudge(item2);        
+        items[2] = itemJudge(item3);
         
-        items[1] = (item2 == "item_1.png")? "item_room_1.png" : 
- 	               (item2 == "item_2.png")? "item_room_2.png" :
- 	               (item2 == "item_3.png")? "item_room_3.png" :
-	    	       (item2 == "item_4.png")? "item_room_4.png" :
-	    	       (item2 == "item_5.png")? "item_room_5.png" :
-	    	       "item_6.png";
-        
-        items[2] = (item3 == "item_1.png")? "item_room_1.png" : 
-                   (item3 == "item_2.png")? "item_room_2.png" :
-                   (item3 == "item_3.png")? "item_room_3.png" :
- 	               (item3 == "item_4.png")? "item_room_4.png" :
- 	               (item3 == "item_5.png")? "item_room_5.png" :
- 	               "item_6.png";
-        
-        out.println(items[0]);
-        
-        
-
+        System.out.println("items[0]="+items[0]);
+		System.out.println("items[1]="+items[1]);
+		System.out.println("items[2]="+items[2]);
+		
         //リクエストオブジェクトへの設定
         request.setAttribute("items", items);
 
@@ -84,6 +69,35 @@ public class HomeServlet extends HttpServlet {
 		
 	}
 
+	private String itemJudge(String item) {
+	    String item_room = "";
+	    
+	    switch(item) {
+	    case "item_1.png" :
+	    	item_room = "item_room_1.png";
+	    	break;
+	    case "item_2.png" :
+	    	item_room = "item_room_2.png";
+	    	break;
+	    case "item_3.png" :
+	    	item_room = "item_room_3.png";
+	    	break;
+	    case "item_4.png" :
+	    	item_room = "item_room_4.png";
+	    	break;
+	    case "item_5.png" :
+	    	item_room = "item_room_5.png";
+	    	break;
+	    	default :
+	    	item_room = "item_room_6.png";
+	    	break;
+	    }
+	    
+	    return item_room;
+		
+	}
+	
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
