@@ -18,18 +18,24 @@
     
     <img src="room.png" />
     
-    
-    <div class="drag-and-drop" id="red-box">
+    <ul class="example">
+    <li>
+    <div class="drag-and-drop " >
     <img src=${requestScope.items[0] } />
     </div>
+    </li>
     
-    <div class="drag-and-drop" id="red-box">
+    <li>
+    <div class="drag-and-drop " >
     <img src=${requestScope.items[1] } />
     </div>
+    </li>
     
-    <div class="drag-and-drop" id="red-box">
+    <li>
+    <div class="drag-and-drop " >
     <img src=${requestScope.items[2] } />
     </div>
+    </li>
    
 </body>
 </html>

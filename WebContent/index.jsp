@@ -16,11 +16,9 @@
 <script src="myscript.js"></script> 
 
 <div style="text-align:center;">
-        <h1>HelloWorld</h1>
-        <p>5はhiddenで</p>
         <form method="get" name=form1 action="/tomcat_test/hello">
-            <input type="text" name="num1" value="5"> 
-            <input type="submit" value="ショップへ">
+            <!-- <input type="text" name="num1" value="5">  -->
+            <input id="submit_button" type="submit" value="Go Shop">
         </form>
 </div>
 

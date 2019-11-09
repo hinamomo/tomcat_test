@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+input#submit_button {
+  background-color: deeppink;
+  color: white;
+  width: 130px;
+  font-size: 25px;
+  font-family: oswald;
+  border-radius: 8px;
+  box-shadow: 0px 8px 0px purple;
+  margin-left: 15px;
+}
+
+input#submit_button:hover {
+  box-shadow: 0px 0px 0px;
+  transform: translate(0px, 8px);
+}
+
 /*
 * お店
 */
@@ -56,6 +72,7 @@ ul.image_list li .image_box {
   display: block;
 }
 
+
 /*
 * 部屋
 */
@@ -67,4 +84,12 @@ ul.image_list li .image_box {
 
 .drag {
     z-index: 1001;
+}
+
+.example li{
+  display: inline;
+  float: left;
+  list-style: none;
+  margin : 70px;
+  /* margin-right : 80px; */
 }

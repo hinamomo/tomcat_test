@@ -21,7 +21,7 @@
 		<input type="hidden" name="num1" id="num1" value="item_1.png"> 
 		<input type="hidden" name="num2" id="num2" value=""> 
 		<input type="hidden" name="num3" id="num3" value=""> 
-	<input type="submit" value="お部屋へ">
+	<input id="submit_button" type="submit" value="Go room">
 	</form>
 	
 	<div id="main">
