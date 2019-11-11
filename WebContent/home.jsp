@@ -14,9 +14,10 @@
 
 <body>
 <script src="home.js"></script> 
-    <h1>Let's decorate the selected item in the room!</h1>
+    <!-- <h1>Let's decorate the selected item in the room!</h1> -->
     
     <img src="room.png" />
+    <img src="lofmof_3.png"  />
     
     <ul class="example">
     <li>

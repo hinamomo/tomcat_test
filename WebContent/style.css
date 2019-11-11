@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+
+.layerImage{
+	width:					50%;
+	height:					750px;
+	background-image: 		url(loft_store.jpg);
+	background-repeat: 		no-repeat;
+	background-position: 	top center;
+	-moz-background-size:	cover;
+	background-size:		cover; 	
+}
+
+.layerTransparent{
+	background-color:		rgba(255,255,255,0.7);
+	height:					800px;
+}
+
 input#submit_button {
   background-color: deeppink;
   color: white;
@@ -23,8 +39,8 @@ input#submit_button:hover {
 ul.image_list li {
   /* liが横並びになるようにします。 */
   display: inline-block;
-  border-style: solid;
-  border-color: gold;
+  border-style: ridge;
+  border-color: white;
   width: 200px;
   height: 150px;
   margin: 10px;
@@ -71,7 +87,6 @@ ul.image_list li .image_box {
   チェックボックスの非表示を解除します。 */
   display: block;
 }
-
 
 /*
 * 部屋

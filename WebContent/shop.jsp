@@ -11,20 +11,28 @@
 </head>
 <body>
 　　<script src="shop.js"></script> 
-	<h1>ショップへようこそ</h1>
+	<!-- <h1>ショップへようこそ</h1>
 	<h2>コインを全てゲットできたね！</h2>
-	<h2>お部屋に置きたいグッズを３つ選ぼう！</h2>
-
+	<h2>お部屋に置きたいグッズを３つ選ぼう！</h2> -->
+	
+　
 	<input type="hidden" value=${requestScope.num }>
 	
+	<div style="text-align:right;">
 	<form method="get" name=form1 action="/tomcat_test/home">
 		<input type="hidden" name="num1" id="num1" value="item_1.png"> 
 		<input type="hidden" name="num2" id="num2" value=""> 
 		<input type="hidden" name="num3" id="num3" value=""> 
 	<input id="submit_button" type="submit" value="Go room">
 	</form>
+	</div>
 	
-	<div id="main">
+	<div style="float:left;">
+    <img src="lofmof_2.png"  />
+    </div>
+	
+	<div id="main" class="layerImage" style="float:left;">
+	<div class="layerTransparent" style="float:left;">
       <ul class="image_list">
         <li>
           <div class="image_box">
@@ -64,6 +72,8 @@
         </li>
         
       </ul>
+      </div>
     </div>
+    
 </body>
 </html>

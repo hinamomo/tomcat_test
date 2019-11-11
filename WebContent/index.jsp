@@ -15,12 +15,16 @@
 <body>  
 <script src="myscript.js"></script> 
 
-<div style="text-align:center;">
+<div style="text-align:right;">
+<!-- <div style="text-align:center;"> -->
         <form method="get" name=form1 action="/tomcat_test/hello">
             <!-- <input type="text" name="num1" value="5">  -->
             <input id="submit_button" type="submit" value="Go Shop">
         </form>
 </div>
+<img src="lofmof_1.png"  />
+
+
 
 </body>
 </html>
